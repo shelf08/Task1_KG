@@ -1,4 +1,5 @@
-import javax.swing.*;
+package ru.vsu.cs.lobtsov_d_a.kg.task_1;
+
 import java.awt.*;
 
 
@@ -11,12 +12,11 @@ public class VAZ2107 {
     private int height;
     private Color color;
 
-    public VAZ2107(final int x, final int y, final int width, final int height, final Color color) {
+    public VAZ2107(final int x, final int y, final int width, final int height) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
-        this.color = color;
     }
 
     public void setX(int x) {
@@ -27,17 +27,6 @@ public class VAZ2107 {
         this.y = y;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
 
     void draw(final Graphics gr) {
         Graphics2D g = (Graphics2D) gr;

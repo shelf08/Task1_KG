@@ -1,21 +1,31 @@
+package ru.vsu.cs.lobtsov_d_a.kg.task_1;
+
 import javax.swing.*;
 import java.awt.*;
 
+import static java.awt.SystemColor.window;
 
-public class BACK{
+
+public class Back {
+
+    public static void main(String[] args) {
+        MainWindow window = new MainWindow();
+        window.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        window.setSize(1920, 1080);
+        window.setVisible(true);
+    }
 
     private int x;
     private int y;
     private int width;
     private int height;
-    private Color color;
 
-    public BACK(final int x, final int y, final int width, final int height, final Color color) {
+    public Back(final int x, final int y, final int width, final int height) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
-        this.color = color;
     }
 
     public void setX(int x) {
@@ -34,9 +44,6 @@ public class BACK{
         this.height = height;
     }
 
-    public void setColor(Color color) {
-        this.color = color;
-    }
 
     void draw(final Graphics gr) {
         Graphics2D g = (Graphics2D) gr;
@@ -74,35 +81,9 @@ public class BACK{
         g.setColor(new Color(222, 221, 221));
         g.fillRect(0,710,2048,5);
 
-        for(int x=0, i=0; i<500; x=x+40) {
+        for(int x=0, i=0; i<48; x=x+40) {
             g.setColor(new Color(222, 221, 221));
             g.fillRect(x, 800, 20, 5);
-            i++;
-        }
-        for(int x=0, i=0; i<500; x=x+100) {
-            g.setColor(new Color(40, 40, 40));
-            g.fillRect(x, 950, 10, 35);
-            g.setColor(new Color(255, 0, 0));
-            g.fillRect(x+3, 952, 5, 3);
-            g.setColor(new Color(0, 0, 0));
-            g.drawRect(x, 950, 10, 35);
-            i++;
-        }
-
-        //табличка
-        for(int x=100, i=0; i<500; x=x+700) {
-            g.setColor(new Color(141, 65, 24));
-            g.fillRect(x, 670, 7, 35);
-            g.setColor(new Color(0, 0, 0));
-            g.drawRect(x, 670, 7, 35);
-            g.setColor(new Color(141, 65, 24));
-            g.fillRect(x-29, 635, 62, 35);
-            g.setColor(new Color(0, 0, 0));
-            g.drawRect(x-29, 635, 62, 35);
-            g.setFont(new Font("Times",Font.PLAIN, 11));
-            g.drawString("  Купание",x-26, 648);
-            g.setFont(new Font("Times",Font.PLAIN, 11));
-            g.drawString("запрещено!",x-26, 660);
             i++;
         }
 
@@ -149,12 +130,11 @@ public class BACK{
         g.fillPolygon(new int[] {465,465,490},new int[] {670,520,670},3);
         g.setColor(new Color(2, 98, 16));
         g.setStroke(new BasicStroke(6.0F));
-        g.drawLine(460,520,400,550);
-        g.drawLine(460,520,510,560);
-        g.drawLine(460,520,520,515);
-        g.drawLine(460,520,445,580);
-        g.drawLine(455,520,410,490);
-        g.drawLine(460,520,490,470);
+        g.drawArc(410, 520,120,260,52,45);
+        g.drawArc(400, 520,120,260,92,45);
+        g.drawArc(410, 520,100,260,52,45);
+        g.drawArc(430, 520,70,260,92,45);
+        g.drawArc(440, 520,40,280,52,45);
 
         //пальма2
         g.setColor(new Color(98, 39, 3));
@@ -163,11 +143,11 @@ public class BACK{
         g.fillPolygon(new int[] {1765,1765,1790},new int[] {670,520,670},3);
         g.setColor(new Color(2, 98, 16));
         g.setStroke(new BasicStroke(6.0F));
-        g.drawLine(1760,520,1700,550);
-        g.drawLine(1760,520,1810,560);
-        g.drawLine(1760,520,1820,515);
-        g.drawLine(1760,520,1745,580);
-        g.drawLine(1755,520,1710,490);
-        g.drawLine(1760,520,1790,470);
+        g.drawArc(1710, 520,120,260,52,45);
+        g.drawArc(1700, 520,120,260,92,45);
+        g.drawArc(1710, 520,100,260,52,45);
+        g.drawArc(1730, 520,70,260,92,45);
+        g.drawArc(1740, 520,40,280,52,45);
+
     }
 }

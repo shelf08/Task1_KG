@@ -1,3 +1,5 @@
+package ru.vsu.cs.lobtsov_d_a.kg.task_1;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -17,11 +19,15 @@ public class DrawPanel extends JPanel implements ActionListener {
 
     private VAZ2107 vaz;
 
-    private CLOUDS cloud;
+    private Cloud cloud;
 
-    private BACK back;
+    private Back back;
 
-    private SHIP ship;
+    private Ship ship;
+
+    private Tablet tablet;
+
+    private Pillar pillar;
 
     public DrawPanel(final int width, final int height, final int timerDelay) {
         this.PANEL_WIDTH = width;
@@ -30,10 +36,15 @@ public class DrawPanel extends JPanel implements ActionListener {
         timer = new Timer(timerDelay, this);
         timer.start();
 
-        this.cloud = new CLOUDS(ticksFromStart1, 100, 200, 260, Color.RED);
-        this.vaz = new VAZ2107(ticksFromStart2, 800, 200, 260, Color.RED);
-        this.back = new BACK(ticksFromStart2, 800, 200, 260, Color.RED);
-        this.ship = new SHIP(ticksFromStart3 , 295, 200, 260, Color.RED);
+
+        this.cloud = new Cloud(ticksFromStart1, 100, 200, 260);
+        this.vaz = new VAZ2107(ticksFromStart2, 800, 200, 260);
+        this.back = new Back(ticksFromStart2, 800, 200, 260);
+        this.tablet = new Tablet(ticksFromStart2, 100, 200, 260);
+        this.pillar = new Pillar(ticksFromStart2 , 295, 200, 260);
+        this.ship = new Ship(ticksFromStart3 , 295, 200, 260);
+
+
     }
 
     @Override
@@ -46,13 +57,19 @@ public class DrawPanel extends JPanel implements ActionListener {
         back.setX(ticksFromStart2 * 0);
         back.draw(gr);
 
-        vaz.setX(ticksFromStart2 * 5);
+        vaz.setX((int) (ticksFromStart2 * 1));
         vaz.draw(gr);
 
-        ship.setX(ticksFromStart3 * 3);
+        ship.setX((int) (ticksFromStart3 * 0.6));
         ship.draw(gr);
 
-        cloud.setX(ticksFromStart1 * 2);
+        tablet.setX(ticksFromStart2 * 0);
+        tablet.draw(gr);
+
+        pillar.setX(ticksFromStart2 * 0);
+        pillar.draw(gr);
+
+        cloud.setX((int) (ticksFromStart1 * 0.4));
         cloud.draw(gr);
 
     }
