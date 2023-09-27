@@ -72,6 +72,7 @@ public class DrawPanel extends JPanel implements ActionListener {
         cloud.setX((int) (ticksFromStart1 * 0.4));
         cloud.draw(gr);
 
+
     }
 
     @Override

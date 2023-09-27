@@ -1,31 +1,26 @@
 package ru.vsu.cs.lobtsov_d_a.kg.task_1;
 
-import javax.swing.*;
 import java.awt.*;
-
-import static java.awt.SystemColor.window;
 
 
 public class Back {
 
-    public static void main(String[] args) {
-        MainWindow window = new MainWindow();
-        window.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        window.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        window.setSize(1920, 1080);
-        window.setVisible(true);
-    }
 
     private int x;
     private int y;
     private int width;
     private int height;
 
+    private Stone[] stones = new Stone[250];
+
     public Back(final int x, final int y, final int width, final int height) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
+        for (int i = 0; i < stones.length; i++) {
+            stones[i] = new Stone(getRandom(0,2048),getRandom(510,690));
+        }
     }
 
     public void setX(int x) {
@@ -60,17 +55,10 @@ public class Back {
         g.setColor(new Color(245, 189, 5));
         g.fillRect(0,500,2048,200);
 
-        for(int x=0, i=0; i<500; x=x+140) {
-            g.setColor(new Color(141, 141, 141));
-            g.fillRect(x+40, 520, 2, 2);
-            g.setColor(new Color(141, 141, 141));
-            g.fillRect(x, 600, 3, 3);
+        for (Stone stone: stones) {
+            stone.draw(gr);
 
-            g.setColor(new Color(141, 141, 141));
-            g.fillRect(x+80, 680, 4, 4);
-            i++;
         }
-
 
         //дорога
         g.setColor(new Color(66, 66, 66));
@@ -149,5 +137,9 @@ public class Back {
         g.drawArc(1730, 520,70,260,92,45);
         g.drawArc(1740, 520,40,280,52,45);
 
+
+    }
+    public static int getRandom(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
     }
 }
