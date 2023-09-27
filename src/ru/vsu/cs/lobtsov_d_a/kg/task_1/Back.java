@@ -128,7 +128,7 @@ public class Back {
         g.setColor(new Color(98, 39, 3));
         g.fillRect(1750,520,15,150);
         g.setColor(new Color(98, 39, 3));
-        g.fillPolygon(new int[] {1765,1765,1790},new int[] {670,520,670},3);
+        g.fillPolygon(new int[] {1765,1765,1791},new int[] {670,520,670},3);
         g.setColor(new Color(2, 98, 16));
         g.setStroke(new BasicStroke(6.0F));
         g.drawArc(1710, 520,120,260,52,45);
